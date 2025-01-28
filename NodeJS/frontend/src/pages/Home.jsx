@@ -1,32 +1,20 @@
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home = () => {
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h1>Bienvenido a la Gestión de Productos y Categorías</h1>
+    <div className="container text-center mt-5">
+      <h1 className="mb-4">Gestión de Productos y Categorías</h1>
       <p>Selecciona una opción:</p>
 
-      <nav style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-        <Link to="/products" style={styles.button}>Ver Productos</Link>
-        <Link to="/products/new" style={styles.button}>Agregar Producto</Link>
-        <Link to="/categories" style={styles.button}>Ver Categorías</Link>
-        <Link to="/categories/new" style={styles.button}>Agregar Categoría</Link>
-      </nav>
+      <div className="d-flex justify-content-center gap-3">
+        <Link to="/products" className="btn btn-primary">📦 Ver Productos</Link>
+        <Link to="/products/new" className="btn btn-success">➕ Agregar Producto</Link>
+        <Link to="/categories" className="btn btn-secondary">📂 Ver Categorías</Link>
+        <Link to="/categories/new" className="btn btn-warning">➕ Agregar Categoría</Link>
+      </div>
     </div>
   );
-};
-
-const styles = {
-  button: {
-    display: 'inline-block',
-    padding: '10px 20px',
-    fontSize: '16px',
-    color: 'white',
-    backgroundColor: '#007bff',
-    textDecoration: 'none',
-    borderRadius: '5px',
-    transition: 'background 0.3s',
-  }
 };
 
 export default Home;
